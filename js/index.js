@@ -49,14 +49,14 @@ document.getElementById("btn-search").addEventListener("click",async =>{
             return false;
         }
 
-        const _url_giphy_demo_data_url = "./data/giphy2.json";
+        const _url_giphy_data_url = "./data/giphy2.json";
 
         const _giphy_apikey = "Wmop3aReC0ypaS1Tifrv7oB5azTx5oCD"
         const _search_text = _txtsearch.value;
-        const _giphy_url_1 = `https://api.giphy.com/v1/gifs/search?api_key=${_giphy_apikey}&q=${_search_text}`;
-        const _giphy_url_2 = `https://api.giphy.com/v1/gifs/search?q=${_search_text}&api_key=${_giphy_apikey}`;
+        const _giphy_url_1 = `//api.giphy.com/v1/gifs/search?api_key=${_giphy_apikey}&q=${_search_text}`;
+        const _giphy_url_2 = `//api.giphy.com/v1/gifs/search?q=${_search_text}&api_key=${_giphy_apikey}`;
 
-        const _url = (_giphy_apikey == "Wmop3aReC0ypaS1Tifrv7oB5azTx5oCD")?_url_giphy_demo_data_url:_giphy_url_1;
+        const _url = (_giphy_apikey == "Wmop3aReC0ypaS1Tifrv7oB5azTx5oCD")?_url_giphy_data_url:_giphy_url_1;
 
         fetch(_url)
         .then(response => {  
@@ -76,11 +76,11 @@ document.getElementById("btn-search").addEventListener("click",async =>{
 
                 let _html = "<div class='center-page'>"
 
-                results.data.forEach((item, index) => {
+                results.data.forEach((gif, giphy2) => {
 
-                    if(index <= 20){
+                    if(giphy2 <= 10){
                         
-                        const _img_url = item.images.original.url;
+                        const _img_url = gif.images.original.url;
 
                         _html += `<img width='300' height='200' src='${_img_url}'>`
                         
