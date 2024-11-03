@@ -5,3 +5,17 @@
     justify-content: center;
     align-items: center;
 }
+
+.font
+{
+    font-family:'Franklin Gothic Medium';font-size: 52px;
+
+    color: white;
+}
+
+body {
+    background-image: linear-gradient(to right,#e32727, #d1e144);
+}
+
+
+
